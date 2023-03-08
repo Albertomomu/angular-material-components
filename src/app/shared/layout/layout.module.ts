@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+// MODULES
 import { MaterialModule } from '../modules/material.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+//SERVICES
+
 
 // Components
 import { FooterComponent } from './footer/footer.component';
@@ -20,7 +26,8 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ]
 })
 export class LayoutModule { }

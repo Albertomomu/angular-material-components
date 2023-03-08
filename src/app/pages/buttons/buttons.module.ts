@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// MODULES
 import { ButtonsRoutingModule } from './buttons-routing.module';
+import { MaterialModule } from 'src/app/shared/modules/material.module';
+
+// COMPONENTS
 import { ButtonsComponent } from './buttons.component';
+
 
 
 @NgModule({
@@ -11,7 +16,8 @@ import { ButtonsComponent } from './buttons.component';
   ],
   imports: [
     CommonModule,
-    ButtonsRoutingModule
+    ButtonsRoutingModule,
+    MaterialModule
   ]
 })
 export class ButtonsModule { }

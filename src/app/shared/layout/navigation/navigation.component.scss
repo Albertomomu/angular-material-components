@@ -1,0 +1,9 @@
+mat-list {
+  a {
+    cursor: pointer;
+
+    &.active-link {
+      background-color: grey;
+    }
+  }
+}

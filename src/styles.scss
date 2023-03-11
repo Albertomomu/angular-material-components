@@ -8,26 +8,49 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-material-components-primary: mat.define-palette(mat.$indigo-palette);
-$angular-material-components-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$mat-custom-primary: (
+  50 : #eceefc,
+  100 : #cfd5f7,
+  200 : #afb9f2,
+  300 : #8e9ded,
+  400 : #7688e9,
+  500 : #5e73e5,
+  600 : #566be2,
+  700 : #4c60de,
+  800 : #4256da,
+  900 : #3143d3,
+  A100 : #ffffff,
+  A200 : #e5e7ff,
+  A400 : #b2b9ff,
+  A700 : #98a2ff,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
 
-// The warn palette is optional (defaults to red).
-$angular-material-components-warn: mat.define-palette(mat.$red-palette);
+// Define the custom palettes.
+$custom-primary: mat.define-palette($mat-custom-primary);
+$custom-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$angular-material-components-theme: mat.define-dark-theme((color: (primary: $angular-material-components-primary,
-        accent: $angular-material-components-accent,
-        warn: $angular-material-components-warn,
+// Define the theme object.
+$custom-theme: mat.define-light-theme((color: (primary: $custom-primary,
+        accent: $custom-accent,
       )));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($angular-material-components-theme);
+// Include the theme styles for Angular Material components.
+@include mat.all-component-themes($custom-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -44,7 +67,6 @@ body {
 
 .page-header {
   padding: 1rem 2rem;
-  margin: 0;
 }
 
 .page-content {
